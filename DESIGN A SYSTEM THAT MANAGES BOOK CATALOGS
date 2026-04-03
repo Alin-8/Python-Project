@@ -1,0 +1,42 @@
+ catalog = {}
+def add_book():
+title = input("Enter book title: ")
+author = input("Enter book author: ")
+genre = input("Enter book genre: ")
+year = input("Enter book year: ")
+catalog[title] = {"author": author, "genre": genre, "year": year}
+print("Book added successfully!")
+def display_catalog():
+if not catalog:
+print("The catalog is empty.")
+else:
+for title, book in catalog.items():
+print(f"Title: {title}, Author: {book['author']}, Genre: {book['genre']}, Year:
+{book['year']}")
+def search_by_title():
+title = input("Enter book title to search: ")
+if title in catalog:
+book = catalog[title]print(f"Title: {title}, Author: {book['author']}, Genre: {book['genre']}, Year:
+{book['year']}")
+else:
+print("Book not found!")
+# Main program loop
+while True:
+print("\nMenu:")
+print("1. Add book")
+print("2. Display catalog")
+print("3. Search by title")
+print("4. Exit")
+choice = input("Choose an option: ")
+if choice == "1":
+add_book()
+elif choice == "2":
+display_catalog()
+elif choice == "3":
+search_by_title()
+elif choice == "4":
+print("Exiting the program. Goodbye!")
+break
+else:
+print("Invalid choice. Please choose a valid option.")
+[
